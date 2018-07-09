@@ -14,6 +14,9 @@
 		947103E820EF7A0800EC194A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 947103E620EF7A0800EC194A /* LaunchScreen.storyboard */; };
 		947103F320EF7A0800EC194A /* SampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947103F220EF7A0800EC194A /* SampleAppTests.swift */; };
 		947103FE20EF7A0800EC194A /* SampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947103FD20EF7A0800EC194A /* SampleAppUITests.swift */; };
+		9471040E20EFA01C00EC194A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9471040C20EFA01C00EC194A /* Crashlytics.framework */; };
+		9471040F20EFA01C00EC194A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9471040D20EFA01C00EC194A /* Fabric.framework */; };
+		94F4869520F38F9F00CA4499 /* ExpandableTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4869420F38F9F00CA4499 /* ExpandableTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		947103F920EF7A0800EC194A /* SampleAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		947103FD20EF7A0800EC194A /* SampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleAppUITests.swift; sourceTree = "<group>"; };
 		947103FF20EF7A0800EC194A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9471040C20EFA01C00EC194A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		9471040D20EFA01C00EC194A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		94F4869420F38F9F00CA4499 /* ExpandableTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9471040E20EFA01C00EC194A /* Crashlytics.framework in Frameworks */,
+				9471040F20EFA01C00EC194A /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,12 +105,15 @@
 		947103DC20EF7A0700EC194A /* SampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				94F4868D20F374A500CA4499 /* CustomTextField */,
 				947103DD20EF7A0700EC194A /* AppDelegate.swift */,
 				947103DF20EF7A0700EC194A /* ViewController.swift */,
 				947103E120EF7A0700EC194A /* Main.storyboard */,
 				947103E420EF7A0800EC194A /* Assets.xcassets */,
 				947103E620EF7A0800EC194A /* LaunchScreen.storyboard */,
 				947103E920EF7A0800EC194A /* Info.plist */,
+				9471040C20EFA01C00EC194A /* Crashlytics.framework */,
+				9471040D20EFA01C00EC194A /* Fabric.framework */,
 			);
 			path = SampleApp;
 			sourceTree = "<group>";
@@ -125,6 +136,14 @@
 			path = SampleAppUITests;
 			sourceTree = "<group>";
 		};
+		94F4868D20F374A500CA4499 /* CustomTextField */ = {
+			isa = PBXGroup;
+			children = (
+				94F4869420F38F9F00CA4499 /* ExpandableTextFieldView.swift */,
+			);
+			path = CustomTextField;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +154,7 @@
 				947103D620EF7A0700EC194A /* Sources */,
 				947103D720EF7A0700EC194A /* Frameworks */,
 				947103D820EF7A0700EC194A /* Resources */,
+				9471040B20EF9FEF00EC194A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -251,12 +271,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9471040B20EF9FEF00EC194A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run a9a059f834d5287f9d557deb9063f9592f60953f cf5b816a5f0ff17d34b929e1144c52fd1cb38390005a8764acc186ccab3044ed";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		947103D620EF7A0700EC194A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				947103E020EF7A0700EC194A /* ViewController.swift in Sources */,
+				94F4869520F38F9F00CA4499 /* ExpandableTextFieldView.swift in Sources */,
 				947103DE20EF7A0700EC194A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +469,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UX8S7P85XB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +492,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UX8S7P85XB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
